@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const sequelize = require('./public/util/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -37,5 +37,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+sequelize.sync()
+.then(() => console.log('DB Connected'))
+.catch(console.error)
 
 module.exports = app;
