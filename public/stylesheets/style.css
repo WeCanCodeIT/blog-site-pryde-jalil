@@ -1,11 +1,11 @@
 *{
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-
+  margin: auto;
+  border: .25rem;
+  padding: 1rem;
 }
 body {
-  padding: 50px;
+  padding: 20px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   margin: auto;
 }
@@ -14,16 +14,23 @@ a {
   color: #00B7FF;
 }
 html{
-  font: 20px/1
+  font: 20px;
 }
 .main{
-  display: flex;
-  flex-direction: row;
-  text-align: center;
+  align-self: center;
 }
+.main__Header{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+} 
 .main__Table{
   display: flex;
-  flex-direction: row;
-  text-align: center;
-
+  flex-direction: column;
+  justify-content: space-between;
+}
+.submit__title{
+  display:flex;
+  justify-content: center;
 }
