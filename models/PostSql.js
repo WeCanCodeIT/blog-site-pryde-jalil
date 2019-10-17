@@ -1,10 +1,9 @@
 const Sequelize = require('sequelize')
 
 const sequelize = require('../util/db')
-const Author = require('./AuthorSql')
-const Post = sequelize.define('post', {
 
-    id: {
+const Post = sequelize.define('post', {
+  id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
