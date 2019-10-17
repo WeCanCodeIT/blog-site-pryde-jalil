@@ -3,12 +3,13 @@
 const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize(
-  'Blog', // db name
+  'library', // db name
   'root', // db username
   'password', // db password
   { // config object
     dialect: 'mysql', // type of db
-    host: 'localhost' // db hosting location
+    host: 'localhost', // db hosting location
+    // insecureAuth: 'true'
   }
 )
 
