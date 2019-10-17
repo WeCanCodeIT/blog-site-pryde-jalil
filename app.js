@@ -1,16 +1,16 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 const sequelize = require('./util/db');
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const CategoryRouter= require("./routes/CategoryRouter");
 const PostRouter= require("./routes/PostRouter");
 const AuthorRouter= require("./routes/AuthorRouter");
 const TagsRouter= require("./routes/TagRouter");
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +44,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-sequelize.sync({ force: true })
+sequelize.sync()
   .then(() => console.log('DB Connected'))
   .catch(console.error)
 
