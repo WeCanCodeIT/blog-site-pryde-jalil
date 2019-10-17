@@ -1,22 +1,22 @@
 const Sequelize = require('sequelize')
 
 const sequelize = require('../util/db')
-const Author = require('./Author')
-const Post = sequelize.define('post', {
+const Post = require("./PostSql");
 
-    id: {
+const Author = sequelize.define('author', {
+  id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true
   },
-  title: {
+  name: {
     type: Sequelize.STRING,
     allowNull: false
   }
-
 });
-Author.belongsToMany(Post,{through: Post});
-Post.belongsTo(Author, {through: Author});
 
-module.exports = Post;
+Post.belongsToMany(Author, {through: 'author_post'});
+Tags.belongsToMany(Post, {through: 'author_post' });
+
+module.exports = Author;
