@@ -1,13 +1,25 @@
-<h1>{{title}}</h1>
+<h1>Blog Posts</h1>
+
+{{#each post}}
+    <h3>{{title}}</h3>
+    <p>{{content}}</p>
+{{/each}}
 
 <form action="/post", method="POST">
         <label>
             Artist: 
-            <input type="text" name="title"></input>
+            <input name="title"></input>
         </label>
         <label>
             Content 
-            <input type="text" name="content"></input>
+            <input  name="content"></input>
+        </label>
+        <label>Category: 
+        <select name="category">
+            {{#each category}}
+                <option value="{{id}}">{{title}}</option>
+            {{/each}}            
+            </select>
         </label>
 
 

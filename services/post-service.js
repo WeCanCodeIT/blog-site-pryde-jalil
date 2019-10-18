@@ -1,10 +1,12 @@
 const Post = require('../models/PostSql');
 
+
 module.exports = {
 async addPost(post){
-    return Post.create(post);
+    await Post.create(post);
 }, 
-async findAll () {
-    return await Post.findAll()
-  },
+
+async viewPosts(){
+     return await Post.findAll();
+}
 }
