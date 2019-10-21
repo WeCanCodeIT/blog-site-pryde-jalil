@@ -1,0 +1,16 @@
+<a href="/"><h2>Go back to main page</h2></a>
+<div class="container">
+    <h3>{{tag.name}}</h3>
+        <article class="user-card">  
+            <ul>
+                {{#each tag.posts}}
+                
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                <p>{{category}}</p>
+                
+                {{/each}}
+            </ul>
+        </article>
+</div>
+<a href="/"><h2>Go back to main page</h2></a>

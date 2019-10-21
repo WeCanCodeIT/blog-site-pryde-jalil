@@ -1,0 +1,42 @@
+<form action="/post", method="POST">
+        <label>
+            Artist: 
+            <input name="title"></input>
+        </label>
+        <label>
+            Content 
+            <input  name="content"></input>
+        </label>
+    <label>Author: 
+            <select name="author">
+            {{#each author}}
+                <option value="{{id}}">{{name}}</option>
+            {{/each}}            
+            </select>
+        </label>
+
+       <label>Category: 
+            <select name="category">
+            {{#each category}}
+                <option value="{{id}}">{{title}}</option>
+            {{/each}}            
+            </select>
+        </label>
+        <label>
+            <select name="tag">
+            {{#each tag}}
+            <option  value="{{id}}">{{name}}</option>
+             {{/each}}
+             </select>
+        </label>
+             
+        
+
+
+        {{!-- <textarea name= "content" placeholder="Write something.." style="height:500px"></textarea> --}}
+        <button> Submit Post!</button>
+</form> 
+
+<a href="/author/"><h2>Be come an author</h2></a>
+<a href="/tags/"><h2>want to submit a tag</h2></a>
+<a href="/"><h2>Go back to main page</h2></a>

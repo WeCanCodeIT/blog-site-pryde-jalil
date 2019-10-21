@@ -1,0 +1,15 @@
+<div class="container">
+    <a href="/"><h2>Go back to main page</h2></a>
+    <h1>{{author.name}}</h1>
+        <article class="user-card">  
+            <ul>
+                {{#each author.post}}
+                
+                <h3>{{title}}</h3>
+                <p>{{content}}</p>
+                
+                {{/each}}
+            </ul>
+        </article>
+</div>
+<a href="/"><h2>Go back to main page</h2></a>

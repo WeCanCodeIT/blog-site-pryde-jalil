@@ -1,0 +1,19 @@
+ <a href="/"><h2>Go back to main page</h2></a>
+ 
+ 
+ <form action="/author/" method="POST">
+
+        <label>
+            Become an Author:
+            <input name="author"></input>
+        </label> 
+        <button>Start posting</button>
+</form>
+ 
+
+  {{#each author}}
+          <a href="/author/{{id}}"><h1>{{name}}</h1></a>
+    {{/each}}
+
+<a href="/"><h2>Go back to main page</h2></a>
+

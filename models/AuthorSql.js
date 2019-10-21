@@ -17,6 +17,6 @@ const Author = sequelize.define('author', {
 });
 
 Post.belongsToMany(Author, {through: 'author_post'});
-Tags.belongsToMany(Post, {through: 'author_post' });
+Author.belongsToMany(Post, {through: 'author_post' });
 
 module.exports = Author;
