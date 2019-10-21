@@ -1,5 +1,5 @@
-
-<form action="/tags/" method="POST">
+<a href="/"><h2>Go back to main page</h2></a>
+  <form action="/tags/" method="POST">
 
         <label>
             #HASHTAG
@@ -7,3 +7,17 @@
         </label> 
         <button>SubmitYaTag</button>
 </form>
+  
+  
+  
+  {{#each tag}}
+        <a href="/tags/{{id}}">
+         <h3>{{name}}</h3>
+         </a>
+         
+    {{/each}}
+
+<a href="/"><h2>Go back to main page</h2></a>
+
+
+

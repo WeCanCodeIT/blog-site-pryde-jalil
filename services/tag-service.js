@@ -10,4 +10,9 @@ async addTag(tagToAdd){
 async findTags(){
     return await Tag.findAll()
 },
+
+async tagPost(tagId){
+    const tagToGet = await Tag.findByPk(tagId);
+    return tagToGet;
+}
 }

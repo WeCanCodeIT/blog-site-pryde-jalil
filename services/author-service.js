@@ -1,18 +1,18 @@
 const Author = require("../models/AuthorSql");
 
 module.exports = {
-    async findAll () {
+    async findAuthors() {
 
         return await Author.findAll()
     },
-
-    async findById (id) {
-        return await Author.findByPk(id)
-        },
     async findSome(authorId){
         const AuthorToGet = await Author.findByPk(authorId)
-        return AuthorToGet.getPosts();
+        return AuthorToGet;
 
+    },
+
+    async authorToAdd(author){
+        await Author.create(author);
     }
     
     }

@@ -5,15 +5,23 @@ module.exports = {
     async createTag(req, res){
     const tag = req.body.tag
     const tagToAdd = new Tag(tag);
-    console.log(req.body)
+   
     await TagService.addTag(tagToAdd);
     const tags = await TagService.findTags();
-    console.log(tags);
-    res.render("allTags",{tag:tags});
+    
+    res.render("tags",{tag:tags});
 
     },
-    async renderAll(req, res){
-        const tags = await TagService.findTags();
-        res.render("tags");
+    async renderAll(req,res){
+        res.render("tags", {tag:await TagService.findTags()})
+    },
+   
+
+    async postTags(req,res){
+        const tagId = Number(req.params.id);;
+        const tag =await TagService.tagPost(tagId)
+        tag.post =  await tag.getPosts()
+        res.render("postTags", {tag:tag})
+
     }
 }

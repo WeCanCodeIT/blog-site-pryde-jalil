@@ -1,28 +1,10 @@
 <h1>Blog Posts</h1>
-
+<a href="/"><h2>Go back to main page</h2></a>
 {{#each post}}
     <h3>{{title}}</h3>
     <p>{{content}}</p>
 {{/each}}
 
-<form action="/post", method="POST">
-        <label>
-            Artist: 
-            <input name="title"></input>
-        </label>
-        <label>
-            Content 
-            <input  name="content"></input>
-        </label>
-        <label>Category: 
-        <select name="category">
-            {{#each category}}
-                <option value="{{id}}">{{title}}</option>
-            {{/each}}            
-            </select>
-        </label>
+<a href="/post/new"> submit new post</a>
+<a href="/"><h2>Go back to main page</h2></a>
 
-
-        {{!-- <textarea name= "content" placeholder="Write something.." style="height:500px"></textarea> --}}
-        <button> Submit Post!</button>
-</form> 

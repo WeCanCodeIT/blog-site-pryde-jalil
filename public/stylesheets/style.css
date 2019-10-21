@@ -34,3 +34,32 @@ html{
   display:flex;
   justify-content: center;
 }
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  flex-flow: row wrap;
+ overflow: hidden;
+}
+.flex-wrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+.card {
+  background-color: purple;
+  display: inline-block;
+  max-width: 300px;
+  min-width: 150px;
+  min-height: 200px;
+  content: "";
+  margin: 1rem 1rem 0 0;
+  box-shadow: 0 1px 3px 0 rgba(58, 62, 75, 0.25);
+  flex: 0 0 25%;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-radius: .2rem;
+ 
+}
